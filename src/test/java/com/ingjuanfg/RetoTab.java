@@ -29,8 +29,8 @@ public class RetoTab {
         driver.get("https://automationtesting.co.uk/browserTabs.html");
         //ACT
 
-        WebElement openTabButton = driver.findElement(By.xpath("//div[@class='col-4 col-12-medium']//input[@value='Open Tab']"));
-        openTabButton.click();
+        WebElement openButton = driver.findElement(By.xpath("//div[@class='col-4 col-12-medium']//input[@value='Open Tab']"));
+        openButton.click();
         String originalWindow = driver.getWindowHandle();
 
         Set<String> allWindows = driver.getWindowHandles();
@@ -46,10 +46,10 @@ public class RetoTab {
         }
 
         WebElement searchInput = driver.findElement(By.xpath("//div[@id='searchform']//input[@name='q']"));
-        searchInput.sendKeys("google" + Keys.ENTER);
+        searchInput.sendKeys("Hola Mundo" + Keys.ENTER);
     }
     @AfterAll
     public static void configuracionFinal() {
-        //driver.quit();
+        driver.quit();
     }
 }
